@@ -1,0 +1,86 @@
+@import '../../assets/style/allStyle.scss';
+
+.header{
+
+    position: fixed;
+    top: 30px;
+    height: 100%;
+
+    // &__wrapper{
+    //     position: fixed;
+    //     height: 100%;
+    // }
+
+
+    &__logo{
+        display: flex;
+    }
+
+    &__logo-img{
+
+        img{
+            width: 64px;
+        }
+    }
+
+    &__logo-text{
+
+        padding: 16px 0 0 8px;
+
+        h4{
+            @include fredokaBold();
+
+            font-size: 32px;
+            color: $mainColor;
+        }
+    }
+
+
+    &__navigation{
+
+        margin-top: 60px;
+
+        ul{
+
+            li{
+                list-style-type: none;
+                cursor: pointer;
+                line-height: 52px;
+                width: 160px;
+                display: flex;
+                align-items: center;
+                border-radius: 26px;
+                padding-left: 8px;
+                margin-bottom: 10px;
+
+                span{
+                    @include poppinsMedium();
+
+                    font-size: 20px;
+                    color: $mainColorText;
+                    padding-left: 16px;
+                }
+
+                img{
+                    width: 30px;
+                }
+            }
+
+            li:hover{
+                background: #E8E8E8;
+            }
+        }
+
+        button{
+            @include poppinsMedium();
+
+            font-size: 22px;
+            color: $colorWhite;
+            padding: 6px 54px;
+            margin-top: 30px;
+            border: 1px solid $mainColor;
+            background: $mainColor;
+            border-radius: 26px;
+        }
+    }
+}

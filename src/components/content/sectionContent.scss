@@ -1,0 +1,20 @@
+@import '../../assets//style/allStyle.scss';
+
+.content{
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__dwitt-title{
+
+        padding-top: 132px;
+        width: 600px;
+        h4{
+            @include poppinsMedium();
+
+            font-size: 26px;
+            color: $mainColorText;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Montserrat&family=Overpass:wght@600&family=Poppins:wght@300;400;500&display=swap');
+
+
+@mixin fredokaBold{
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+}
+
+@mixin poppinsLight{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+@mixin poppinsRegular{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+@mixin poppinsMedium{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+@mixin montserratRegular{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+@mixin overpassBold{
+    font-family: 'Overpass', sans-serif;
+    font-weight: 600;
+}

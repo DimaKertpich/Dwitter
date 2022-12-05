@@ -1,0 +1,62 @@
+@import '../../assets/style/allStyle.scss';
+
+.registration{
+    position: relative;
+    padding-top: 30px;
+
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__data{
+        width: 600px;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__data-user{
+        padding-top: 23px;
+        line-height: 18px;
+
+        h4{
+            @include poppinsMedium();
+
+            font-size: 18px;
+            color: $mainColorText;
+        }
+
+        p{
+            @include poppinsMedium();
+
+            font-size: 14px;
+            color: $colorSubText;
+        }
+    }
+
+    &__data-auth{
+        margin-top: 23px;
+
+        button{
+            @include poppinsRegular();
+
+            color: $almostWhite;
+            border-radius: 26px;
+        }
+    }
+    
+    &__data-auth-login{
+
+        padding: 6px 24px;
+        margin-right: 16px;
+        background: $mainColor;
+        border: 1px solid $mainColor;
+    }
+
+    &__data-auth-registr{
+        padding: 6px 34px;
+        background: $btnRegistr;
+        border: 1px solid $btnRegistr;
+    }
+}
