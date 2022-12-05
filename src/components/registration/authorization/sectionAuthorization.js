@@ -10,8 +10,35 @@ function SectionAuthorization(){
     let [userName, setUserName] = useState(null);
     let [passwarod, setPassword] = useState(null);
 
-    console.log(userName);
-    console.log(passwarod);
+    function postLogin() {
+        fetch('http://localhost:9090/api/messages', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ "username": userName,
+                                    "password": passwarod })
+        })
+        .then(response => response.json())
+        .then(response => console.log(JSON.stringify(response)))
+    }
+
+    // function PostData() {
+    //     fetch('http://localhost:9090/api/users', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ "username": "new1111",
+    //                                 "email":"email111@gmail.com",
+    //                                 "password":"password",
+    //                                 "biography":"bio" })
+    //     })
+    //     .then(response => response.json())
+    //     .then(response => console.log(JSON.stringify(response)))
+    // }
 
     return(
         <section className="authorization">
@@ -32,7 +59,7 @@ function SectionAuthorization(){
 
                     <div className="authorization__btn">
                         <button className="authorization__btn-later" type="button">Later</button>
-                        <button className="authorization__btn-singIn" type="button">Sign In</button>
+                        <button className="authorization__btn-singIn" type="button" onClick={postLogin}>Sign In</button>
                     </div>
                 </div>
             </div>
