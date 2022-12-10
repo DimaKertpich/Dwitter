@@ -1,0 +1,88 @@
+@import '../../../assets/style/allStyle.scss';
+
+.registration{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(26, 25, 25, 0.5);
+    width: 100%;
+    height: 100vh;
+
+    &__signUp{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -240px;
+        margin-top: -340px;
+        width: 480px;
+        height: 680px;
+        background: $colorWhite;
+        box-shadow: 2px 2px 8px 2px rgba(0,0,0, .4);
+    }
+
+    &__signUp-wrapper{
+        padding: 0 100px;
+    }
+
+    &__signUp-title{
+
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 80px;
+
+        h4{
+            @include poppinsMedium();
+
+            font-size: 30px;
+            color: $mainColorText;
+        }
+    }
+
+    &__signUp-name,
+    &__signUp-email,
+    &__signUp-password,
+    &__signUp-repeatPassword{
+        padding-bottom: 40px;
+
+        label{
+            @include poppinsRegular();
+
+            display: block;
+        }
+
+        input{
+            margin-top: 10px;
+            border: none;
+            border-bottom: 1px solid $mainColorText;
+            outline: none;
+            width: 100%;
+        }
+    }
+
+    &__btn{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+
+        button{
+            @include poppinsMedium();
+
+            padding: 6px 32px;
+        }
+    }
+
+    &__btn-later{
+        background: $btnRegistr;
+        color: $colorWhite;
+        border-radius: 12px;
+        border: 1px solid $btnRegistr;
+    }
+
+    &__btn-singUp{
+        background: $mainColor;
+        color: $colorWhite;
+        border-radius: 12px;
+        border: 1px solid $mainColor;
+    }
+}

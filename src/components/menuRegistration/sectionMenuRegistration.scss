@@ -1,12 +1,39 @@
 @import '../../assets/style/allStyle.scss';
 
-.registration{
+.menuRegistration{
     position: relative;
     padding-top: 30px;
 
     &__wrapper{
         display: flex;
         justify-content: center;
+    }
+
+    &__wrapper-search{
+        display: flex;
+        justify-content: right;
+    }
+
+    &__search{
+        margin-top: 23px;
+        position: fixed;
+
+        input{
+            width: 100%;
+            height: 40px;
+            border-radius: 28px;
+            border: 1px solid $borderText;
+            outline: none;
+            padding-left: 30px;
+            box-sizing: border-box;
+        }
+
+        img{
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 14px;
+        }
     }
 
     &__data{

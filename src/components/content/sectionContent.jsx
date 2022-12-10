@@ -1,5 +1,5 @@
 import Navigation from '../navigation/sectionNavigation.js';
-import Registration from '../registration/sectionRegistration.js';
+import MenuRegistration from '../menuRegistration/sectionMenuRegistration.jsx';
 import '../content/sectionContent.scss';
 
 function SectionContent(){
@@ -8,7 +8,7 @@ function SectionContent(){
             <div className="container">
 
                 <Navigation></Navigation>
-                <Registration></Registration>
+                <MenuRegistration></MenuRegistration>
 
                 <div className='content__wrapper'>
                     <div className='content__dwitt'>
@@ -18,6 +18,9 @@ function SectionContent(){
                     </div>
                 </div>
             </div>
+
+
+
             <br/>
             <br/>
             <br/>
