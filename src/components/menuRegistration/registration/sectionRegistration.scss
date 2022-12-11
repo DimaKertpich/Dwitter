@@ -39,10 +39,8 @@
         }
     }
 
-    &__signUp-name,
-    &__signUp-email,
-    &__signUp-password,
-    &__signUp-repeatPassword{
+    
+    &__signUp-data{
         padding-bottom: 40px;
 
         label{
@@ -84,5 +82,19 @@
         color: $colorWhite;
         border-radius: 12px;
         border: 1px solid $mainColor;
+    }
+
+    &__signUp-data-cross{
+
+        font-size: 12px;
+        color: $colorCross;
+        margin-left: 6px;
+    }
+
+    &__signUp-data-check{
+
+        font-size: 12px;
+        color: $colorSuccess;
+        margin-left: 6px;
     }
 }

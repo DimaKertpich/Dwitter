@@ -6,15 +6,82 @@
         justify-content: center;
     }
 
+    &__dwitt{
+        width: 600px;
+        margin-top: 140px;
+        padding: 20px;
+        background: $contentInput;
+        box-sizing: border-box;
+        border-radius: 10px;
+        border: 1px solid $borderText;
+    }
+
     &__dwitt-title{
 
-        padding-top: 132px;
-        width: 600px;
         h4{
             @include poppinsMedium();
 
             font-size: 26px;
             color: $mainColorText;
+        }
+    }
+
+    &__dwitt-post{
+        display: flex;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    &__dwitt-post-user{
+        img{
+            width: 44px;
+        }
+    }
+
+    &__dwitt-post-test{
+        width: 100%;
+        padding: 6px 0 0 12px;
+
+        textarea{
+            @include poppinsRegular();
+
+            color: $colorSubText;
+            width: 100%;
+            border: none;
+            background: $contentInput;
+            outline: none;
+            resize: none;
+            min-height: 164px;
+        }
+    }
+
+    &__dwitt-footer{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__dwitt-footer-reaction{
+        display: flex;
+        justify-content: space-between;
+        width: 66px;
+        padding-top: 10px;
+        img{
+            width: 20px;
+            cursor: pointer;
+        }
+    }
+
+    &__dwitt-footer-btn{
+        width: 100%;
+        text-align: right;
+        button{
+            @include poppinsMedium();
+
+            border-radius: 28px;
+            color: $colorWhite;
+            padding: 6px 28px;
+            background: $mainColor;
+            border: 1px solid $mainColor;
         }
     }
 }

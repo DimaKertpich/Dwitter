@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const jointSlice = createSlice({
     name: "joint",
     initialState:{
-        controlLogin: true,
+        controlLogin: false,
         controlRegistr: false
     },
     reducers:{

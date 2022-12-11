@@ -11,40 +11,40 @@ import { faXmark, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 function SectionAuthorization(){
 
-    // let [userName, setUserName] = useState(null);
-    // let [password, setPassword] = useState(null);
-
     const dispatch = useDispatch();
     const changeLogin = () => dispatch(activeLogin(false));
+    // let [sendUser, setSendUser] = useState(null);
 
 
     function postLogin() {
+
         fetch('http://localhost:9090/api/auth/login', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ "username": 'userName',
-                                    "password": 'password' })
-        })
-        .then(response => response.json())
-        .then(data => console.log(data));
-       
+            body: JSON.stringify({ "username": arrayLogin[0].value,
+                                    "password": arrayLogin[1].value })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data));
     }
 
     let [arrayLogin, setArrayLogin] = useState([
         {
             name: 'Username',
+            type: 'text',
             value: '',
             check: false,
             activated: false,
-            pattern: /^[a-zA-Z]{2,30}$/,
+            pattern: /^[a-zA-Z]{3,30}$/,
             id: 0 
         },
         {
             name: 'Password',
             value: '',
+            type: 'password',
             check: false,
             activated: false,
             pattern: /.+/,
@@ -54,7 +54,7 @@ function SectionAuthorization(){
 
     function saveData(value ,id){
         setArrayLogin(arrayLogin.map(obj =>{
-            
+
             if(obj.pattern.test(value) && obj.id === id){
                 return {...obj, value: value, check: true, activated: true}
             }else if(obj.id === id){
@@ -76,9 +76,19 @@ function SectionAuthorization(){
                     { item.check === true && <FontAwesomeIcon className="authorization__signIn-data-check" icon={faCheck} />}
                 </span>}
              </label> 
-            <input type="text" onChange={(e) => saveData(e.target.value ,item.id)}></input>
+            <input type={item.type} onChange={(e) => saveData(e.target.value ,item.id)}></input>
         </div>
     ))
+
+    function activeBtnLogin(){
+        for(let i = 0; i < arrayLogin.length; i++){
+            if(arrayLogin[0].check === true && arrayLogin[1].check === true){
+                return true
+            }else{
+                return false
+            }
+        }
+    }
 
     return(
         <section className="authorization">
@@ -90,19 +100,9 @@ function SectionAuthorization(){
 
                     { showArrayLogin }
 
-                    {/* <div className="authorization__signIn-name">
-                        <label>Username</label>
-                        <input  type="text" onChange={(e) => setUserName(e.target.value)}></input>
-                    </div>
-                    <div className="authorization__signIn-password">
-                        <label>Password</label>
-                        <input type="text" onChange={(e) => setPassword(e.target.value)}></input>
-                    </div>  */}
-
-
                     <div className="authorization__btn">
                         <button className="authorization__btn-later" type="button" onClick={changeLogin}>Later</button>
-                        <button className="authorization__btn-singIn" type="button" onClick={postLogin}>Sign In</button>
+                        <button className="authorization__btn-singIn" type="button" disabled={!activeBtnLogin()} onClick={postLogin}>Sign In</button>
                     </div>
                 </div>
             </div>
